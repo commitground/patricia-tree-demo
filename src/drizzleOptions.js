@@ -1,3 +1,6 @@
+import MerkluxTree from './../build/contracts/MerkluxTree.json'
+import MerkluxCase from './../build/contracts/MerkluxCase.json'
+
 const drizzleOptions = {
   web3: {
     block: false,
@@ -7,6 +10,8 @@ const drizzleOptions = {
     }
   },
   contracts: [
+    MerkluxTree,
+    MerkluxCase
   ],
   events: {
   },

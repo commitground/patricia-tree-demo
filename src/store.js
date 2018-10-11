@@ -1,8 +1,9 @@
 import createHistory from 'history/createBrowserHistory'
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
+import {createLogger} from 'redux-logger';
 import { routerMiddleware } from 'react-router-redux'
-import reducer from './reducer'
+import mainReducer from './reducers';
 import rootSaga from './rootSaga'
 import createSagaMiddleware from 'redux-saga'
 import { generateContractsInitialState } from 'drizzle'
@@ -13,20 +14,22 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const history = createHistory()
 
+const loggerMiddleware = createLogger();
 const routingMiddleware = routerMiddleware(history)
 const sagaMiddleware = createSagaMiddleware()
 
 const initialState = {
-  contracts: generateContractsInitialState(drizzleOptions)
+  contracts: generateContractsInitialState(drizzleOptions),
 }
 
 const store = createStore(
-  reducer,
+  mainReducer,
   initialState,
   composeEnhancers(
     applyMiddleware(
       thunkMiddleware,
       routingMiddleware,
+      loggerMiddleware,
       sagaMiddleware
     )
   )

@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 import { drizzleReducers } from 'drizzle'
+import tree from './tree';
 
-const reducer = combineReducers({
+const mainReducer = combineReducers({
   routing: routerReducer,
+  tree,
   ...drizzleReducers
 })
 
-export default reducer
+export default mainReducer

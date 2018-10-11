@@ -65,3 +65,7 @@ typings/
 
 # etc
 .DS_Store
+
+# Build artifacts
+build
+build_webpack

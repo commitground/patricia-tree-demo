@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router'
-import HomeContainer from './pages/home/HomeContainer'
+import InstructionContainer from './pages/instruction/InstructionContainer'
+import RootContainer from './pages/root/RootContainer'
+import ChildContainer from './pages/child/ChildContainer'
 
 
 class App extends Component {
@@ -27,7 +29,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route exact path="/" component={HomeContainer}/>
+        <Route exact path="/" component={InstructionContainer}/>
+        <Route exact path="/root" component={RootContainer}/>
+        <Route exact path="/child" component={ChildContainer}/>
       </div>
     );
   }
