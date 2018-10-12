@@ -126,7 +126,7 @@ MerklePatriciaTree.contextTypes = {
 }
 
 const mapStateToProps = state => ({
-  data: state.tree,
+  data: state.tree.data,
   root: state.contracts.MerkluxTree.getRootHash
 })
 

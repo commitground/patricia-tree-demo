@@ -1,5 +1,6 @@
 import Child from './Child'
 import { drizzleConnect } from 'drizzle-react'
+import { snapshot } from '../../actions/tree'
 
 // May still need this even with data function to refresh component on updates for this contract.
 const mapStateToProps = (state) => {
@@ -11,7 +12,10 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  snapshot: () => dispatch(snapshot())
+})
 
-const ChildContainer = drizzleConnect(Child, mapStateToProps)
+const ChildContainer = drizzleConnect(Child, mapStateToProps, mapDispatchToProps)
 
 export default ChildContainer

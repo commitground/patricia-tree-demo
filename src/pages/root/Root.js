@@ -1,10 +1,10 @@
 import React from 'react'
-import Fullscreen from '../../layouts/Fullscreen'
+import FullscreenLayout from '../../layouts/FullscreenLayout'
 import { networks } from '../../../truffle'
 
 const Root = ({ accounts, drizzleStatus, networkId }) => {
   const treeMap = (
-    <Fullscreen>
+    <FullscreenLayout>
       <label>Pre requisites</label>
       <pre><code>
           npm install -g ganache-cli
@@ -22,10 +22,10 @@ const Root = ({ accounts, drizzleStatus, networkId }) => {
           truffle migrate --network child
       </code></pre>
       <h2>{networkId}</h2>
-    </Fullscreen>
+    </FullscreenLayout>
   )
   const warning = (
-    <Fullscreen>
+    <FullscreenLayout>
       <h2>For this page, you should change your metamask network to the "root network"</h2>
       <ul>
         <li>Check that you are running <code>ganache-cli</code> with network id <strong>{networks.root.network_id}</strong> and port
@@ -33,7 +33,7 @@ const Root = ({ accounts, drizzleStatus, networkId }) => {
         <li>Check your metamask network is using <strong>http://localhost:{networks.root.port}</strong></li>
         <li>Please see <a href={'/'}>instruction</a></li>
       </ul>
-    </Fullscreen>
+    </FullscreenLayout>
   )
 
   const isOnRootNetwork = networkId === networks.root.network_id

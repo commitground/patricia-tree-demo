@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classnames from 'classnames'
 import SideBar from '../includes/SideBar'
 
-class Fullscreen extends Component {
+class FullscreenLayout extends Component {
   constructor () {
     super()
   }
@@ -28,4 +28,4 @@ class Fullscreen extends Component {
   }
 }
 
-export default Fullscreen
+export default FullscreenLayout

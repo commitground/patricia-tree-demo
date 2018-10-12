@@ -1,9 +1,9 @@
 import React from 'react'
-import Fullscreen from '../../layouts/Fullscreen'
+import FullscreenLayout from '../../layouts/FullscreenLayout'
 
 const Instruction = () => {
   return (
-    <Fullscreen>
+    <FullscreenLayout>
       <label>Pre requisites</label>
       <pre><code>
           npm install -g ganache-cli
@@ -20,7 +20,7 @@ const Instruction = () => {
           truffle migrate --network child <br/>
           truffle migrate --network root
       </code></pre>
-    </Fullscreen>
+    </FullscreenLayout>
   )
 }
 
