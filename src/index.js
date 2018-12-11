@@ -13,7 +13,7 @@ import drizzleOptions from './drizzleOptions'
 ReactDOM.render((
     <DrizzleProvider options={drizzleOptions} store={store}>
         <Router history={history} store={store}>
-          <Route path="/" component={App}/>
+          <Route path={process.env.PUBLIC_URL + '/'} component={App}/>
         </Router>
     </DrizzleProvider>
   ),

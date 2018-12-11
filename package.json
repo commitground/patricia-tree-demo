@@ -4,6 +4,7 @@
   "homepage": "https://commitground.github.io/patricia-tree-demo",
   "devDependencies": {
     "ganache-cli": "^6.1.8",
+    "gh-pages": "^2.0.1",
     "redux-logger": "^3.0.6",
     "truffle": "^4.1.14",
     "truffle-hdwallet-provider": "0.0.5"
@@ -74,6 +75,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build_webpack",
     "start": "node scripts/start.js",
     "build": "truffle compile && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
