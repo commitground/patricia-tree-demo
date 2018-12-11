@@ -7,7 +7,6 @@ import {
   ContractData,
   LoadingContainer,
 } from 'drizzle-react-components'
-import DemoWeb3Provider from '../../LocalWeb3Provider'
 
 const FormStyler = styled.div`
 input {
@@ -16,15 +15,6 @@ input {
 }
 `
 const Ropsten = ({ networkId }) => {
-  console.log(networkId)
-  console.log(networkId)
-  console.log(networkId)
-  console.log(networkId)
-  console.log(networkId)
-  console.log(networkId)
-  console.log(networkId)
-  console.log(networkId)
-  console.log(networkId)
   if (networkId != 3) {
     return (
       <FullscreenLayout styleCode={2}>

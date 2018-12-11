@@ -1,5 +1,3 @@
-const HDWalletProvider = require('truffle-hdwallet-provider')
-
 module.exports = {
   migrations_directory: './migrations',
   networks: {

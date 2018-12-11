@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
-import { networks } from '../truffle'
 import { drizzleConnect } from 'drizzle-react'
 
 class LocalWeb3Provider extends Component {
