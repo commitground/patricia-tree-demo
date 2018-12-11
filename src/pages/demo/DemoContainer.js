@@ -1,4 +1,4 @@
-import Child from './Child'
+import Demo from './Demo'
 import { drizzleConnect } from 'drizzle-react'
 import { snapshot } from '../../actions/tree'
 
@@ -8,14 +8,13 @@ const mapStateToProps = (state) => {
     accounts: state.accounts,
     drizzleStatus: state.drizzleStatus,
     networkId: state.web3.networkId,
-    MerkluxTree: state.contracts.MerkluxTree,
+    MerkleTree: state.contracts.MerkleTree,
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  snapshot: () => dispatch(snapshot())
 })
 
-const ChildContainer = drizzleConnect(Child, mapStateToProps, mapDispatchToProps)
+const DemoContainer = drizzleConnect(Demo, mapStateToProps, mapDispatchToProps)
 
-export default ChildContainer
+export default DemoContainer

@@ -1,6 +1,6 @@
 {
-  "name": "merklux-demo-app",
-  "version": "0.0.0",
+  "name": "patricia-tree-drizzle",
+  "version": "0.1.0",
   "devDependencies": {
     "ganache-cli": "^6.1.8",
     "redux-logger": "^3.0.6",
@@ -41,7 +41,6 @@
     "html-webpack-plugin": "2.29.0",
     "immutable": "^3.8.2",
     "jest": "20.0.4",
-    "merklux": "0.0.3",
     "object-assign": "4.1.1",
     "openzeppelin-solidity": "^2.0.0-rc.2",
     "postcss-flexbugs-fixes": "3.2.0",
@@ -62,6 +61,7 @@
     "redux-saga": "^0.16.2",
     "redux-thunk": "^2.3.0",
     "resolve": "1.6.0",
+    "solidity-patricia-tree": "^1.1.1",
     "style-loader": "0.19.0",
     "styled-components": "^3.4.10",
     "sw-precache-webpack-plugin": "0.11.4",
@@ -76,7 +76,8 @@
     "start": "node scripts/start.js",
     "build": "truffle compile && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "chain": "ganache-cli",
+    "chain": "ganache-cli -p 8545",
+    "migrate": "truffle migrate --network development",
     "prepare": "npm run build"
   },
   "jest": {

@@ -13,8 +13,7 @@ class FullscreenLayout extends Component {
         <SideBar menus={
           [
             { path: '/', title: 'Instruction' },
-            { path: '/child', title: 'Child chain' },
-            { path: '/root', title: 'Root chain' }
+            { path: '/demo', title: 'Go to demo' },
           ]
         }/>
         <div id="wrapper">

@@ -6,16 +6,6 @@ module.exports = {
       port: 8545,
       network_id: "*" // Match any network id
     },
-    child: {
-      host: "localhost",
-      port: 9546,
-      network_id: "432123"
-    },
-    root: {
-      host: "localhost",
-      port: 9547,
-      network_id: "432124"
-    }
   },
   solc: {
     optimizer: {

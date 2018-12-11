@@ -2,7 +2,11 @@ import React from 'react'
 import FullscreenLayout from '../../layouts/FullscreenLayout'
 import MerklePatriciaTree from '../../components/MerklePatriciaTree'
 import styled from 'styled-components'
-import { ContractForm, ContractData, LoadingContainer } from 'drizzle-react-components'
+import {
+  ContractForm,
+  ContractData,
+  LoadingContainer,
+} from 'drizzle-react-components'
 import PrivateNetWeb3Provider from '../../PrivateNetWeb3Provider'
 
 const FormStyler = styled.div`
@@ -11,26 +15,30 @@ input {
   margin-bottom: 1.5rem;
 }
 `
-const Child = ({snapshot}) => {
+
+const Demo = ({ }) => {
   return (
     <FullscreenLayout styleCode={2}>
-      <PrivateNetWeb3Provider ws={'ws://127.0.0.1:9546'} id={432123}>
+      <PrivateNetWeb3Provider ws={'ws://127.0.0.1:8545'}>
         <LoadingContainer>
           <div>
             <div style={{ float: 'left', width: '70%', height: '90vh' }}>
               <MerklePatriciaTree/>
             </div>
-            <div style={{ float: 'right', width: '30%', height: '90vh', wordBreak: 'break-all' }}>
+            <div style={{
+              float: 'right',
+              width: '30%',
+              height: '90vh',
+              wordBreak: 'break-all',
+            }}>
               <h2>Current Root Hash</h2>
-              <ContractData contract={'MerkluxTree'} method={'getRootHash'}/>
+              <ContractData contract={'MerkleTree'} method={'getRootHash'}/>
               <hr/>
               <h2>Insert items</h2>
               <FormStyler>
-                <ContractForm contract="MerkluxTree" method="insert" sendArgs={{ gas: 1000000 }}/>
+                <ContractForm contract="MerkleTree" method="insertString"
+                                   sendArgs={{ gas: 1000000 }}/>
               </FormStyler>
-              <hr/>
-              <h2>Snapshots</h2>
-              <button onClick={snapshot}>Get a snapshot</button>
             </div>
           </div>
         </LoadingContainer>
@@ -39,4 +47,4 @@ const Child = ({snapshot}) => {
   )
 }
 
-export default Child
+export default Demo

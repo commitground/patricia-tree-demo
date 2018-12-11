@@ -24,12 +24,14 @@ class PrivateNetWeb3Provider extends Component {
       // If the network id is specified, check the current web3 version indicates the same network correctly
       return (
         <div>
-          <h2>For this page, you should change your metamask network to the "child network"</h2>
+          <h2>For this page, you should change your metamask network to the
+            "Local development network"</h2>
           <ul>
             <li>Check that you are running <code>ganache-cli</code> with network
               id <strong>{this.props.id}</strong> and port
-              number <strong>{networks.child.port}</strong></li>
-            <li>Check your metamask network is using <strong>http://localhost:{networks.child.port}</strong></li>
+              number <strong>{networks.development.port}</strong></li>
+            <li>Check your metamask network is
+              using <strong>http://localhost:{networks.development.port}</strong></li>
             <li>Please see <a href={'/'}>instruction</a></li>
           </ul>
         </div>

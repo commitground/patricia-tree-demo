@@ -3,7 +3,7 @@ import Tree from 'react-d3-tree'
 import styled from 'styled-components'
 import { drizzleConnect } from 'drizzle-react'
 import PropTypes from 'prop-types'
-import { fetchTree } from './../fetches/merkluxTree'
+import { fetchTree } from '../fetches/merkleTree'
 import { fromJS } from 'immutable'
 
 const TreeStyler = styled.div`
@@ -127,7 +127,7 @@ MerklePatriciaTree.contextTypes = {
 
 const mapStateToProps = state => ({
   data: state.tree.data,
-  root: state.contracts.MerkluxTree.getRootHash
+  root: state.contracts.MerkleTree.getRootHash
 })
 
 const mapDispatchToProps = (dispatch) => ({
