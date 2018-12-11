@@ -76,7 +76,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build_webpack",
+    "deploy": "gh-pages -b gh-pages -d build_webpack",
     "start": "node scripts/start.js",
     "build": "truffle compile && node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
