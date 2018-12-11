@@ -15,9 +15,9 @@ let getWeb3 = new Promise(function(resolve, reject) {
     var results
     var web3
 
-    // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+    // Checking if Web3 has been injected by the browser (Mist/Ropsten)
     if (typeof web3 !== 'undefined') {
-      // Use Mist/MetaMask's provider.
+      // Use Mist/Ropsten's provider.
       web3 = new Web3(web3.currentProvider)
 
       results = {
@@ -39,7 +39,7 @@ let getWeb3 = new Promise(function(resolve, reject) {
         web3Instance: web3
       }
 
-      console.log('No web3 instance injected, using Local web3.');
+      console.log('No web3 instance injected, using Ropsten web3.');
 
       resolve(store.dispatch(web3Initialized(results)))
     }

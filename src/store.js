@@ -29,7 +29,7 @@ const store = createStore(
     applyMiddleware(
       thunkMiddleware,
       routingMiddleware,
-      loggerMiddleware,
+      // loggerMiddleware,
       sagaMiddleware
     )
   )

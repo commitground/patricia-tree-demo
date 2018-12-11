@@ -1,4 +1,4 @@
-import Demo from './Demo'
+import Ropsten from './Ropsten'
 import { drizzleConnect } from 'drizzle-react'
 import { snapshot } from '../../actions/tree'
 
@@ -15,6 +15,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
 })
 
-const DemoContainer = drizzleConnect(Demo, mapStateToProps, mapDispatchToProps)
+const RopstenContainer = drizzleConnect(Ropsten, mapStateToProps, mapDispatchToProps)
 
-export default DemoContainer
+export default RopstenContainer

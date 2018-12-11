@@ -4,9 +4,11 @@ import FullscreenLayout from '../../layouts/FullscreenLayout'
 const Instruction = () => {
   return (
     <FullscreenLayout>
-      <label>Run local block chain w/ ganache & deploy smart contract on to the
-        private network</label>
+      <label>Local environment</label>
       <pre><code>
+        git clone https://github.com/commitground/solidity-patricia-tree<br/>
+        cd solidity-patricia-tree<br/>
+        npm install<br/>
         npm run chain<br/>
         npm run migrate
       </code></pre>

@@ -7,7 +7,7 @@ import {
   ContractData,
   LoadingContainer,
 } from 'drizzle-react-components'
-import PrivateNetWeb3Provider from '../../PrivateNetWeb3Provider'
+import LocalWeb3Provider from '../../LocalWeb3Provider'
 
 const FormStyler = styled.div`
 input {
@@ -15,12 +15,23 @@ input {
   margin-bottom: 1.5rem;
 }
 `
-
-const Demo = ({ }) => {
+const Local = ({}) => {
   return (
     <FullscreenLayout styleCode={2}>
-      <PrivateNetWeb3Provider ws={'ws://127.0.0.1:8545'}>
-        <LoadingContainer>
+      <LocalWeb3Provider ws={'ws://127.0.0.1:8545'}>
+        <LoadingContainer loadingComp={
+          (
+            <div>
+              <label>Contracts are not migrated</label>
+              <pre><code>
+                git clone https://github.com/commitground/solidity-patricia-tree<br/>
+                cd solidity-patricia-tree<br/>
+                npm install<br/>
+                npm run migrate
+              </code></pre>
+            </div>
+          )
+        }>
           <div>
             <div style={{ float: 'left', width: '70%', height: '90vh' }}>
               <MerklePatriciaTree/>
@@ -37,14 +48,14 @@ const Demo = ({ }) => {
               <h2>Insert items</h2>
               <FormStyler>
                 <ContractForm contract="MerkleTree" method="insertString"
-                                   sendArgs={{ gas: 1000000 }}/>
+                              sendArgs={{ gas: 1000000 }}/>
               </FormStyler>
             </div>
           </div>
         </LoadingContainer>
-      </PrivateNetWeb3Provider>
+      </LocalWeb3Provider>
     </FullscreenLayout>
   )
 }
 
-export default Demo
+export default Local
