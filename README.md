@@ -1,2 +1,3 @@
-# merklux-demo-app
-Merklux Ropsten Application with ReactJS &amp; Drizzle
+# patricia tree demo app
+
+Patricia Tree Demo Application with ReactJS &amp; Drizzle
