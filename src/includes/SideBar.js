@@ -1,5 +1,6 @@
 import React from 'react'
 import { history } from '../store'
+import { Link } from 'react-router-dom'
 
 const locationToActive = (id) => {
   if (history.location.pathname) {
@@ -16,8 +17,8 @@ const SideBar = ({ menus }) => {
         <nav>
           <ul>
             {
-              menus.map(item=>{
-                return (<li><a href={item.path} className={locationToActive(item.path)}>{item.title}</a></li>)
+              menus.map(item => {
+                return (<li><Link to={item.path} className={locationToActive(item.path)}>{item.title}</Link></li>)
               })
             }
           </ul>

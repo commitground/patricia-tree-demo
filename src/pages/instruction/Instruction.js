@@ -10,7 +10,9 @@ const Instruction = () => {
         cd solidity-patricia-tree<br/>
         npm install<br/>
         npm run chain<br/>
-        npm run migrate
+        npm run migrate<br/>
+        npm run start<br/>
+        # open http://localhost:3000
       </code></pre>
     </FullscreenLayout>
   )

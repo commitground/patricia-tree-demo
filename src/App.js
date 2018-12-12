@@ -8,9 +8,12 @@ class App extends Component {
   render () {
     return (
       <div className={'App'}>
-        <Route exact path="/" component={InstructionContainer}/>
-        <Route exact path="/local" component={LocalContainer}/>
-        <Route exact path="/ropsten" component={RopstenContainer}/>
+        <Route exact path={process.env.PUBLIC_URL + '/'}
+               component={process.env.NODE_ENV === 'production'
+                 ? RopstenContainer
+                 : LocalContainer}/>
+        <Route exact path={process.env.PUBLIC_URL + '/manual'}
+               component={InstructionContainer}/>
       </div>
     )
   }

@@ -12,13 +12,18 @@ class FullscreenLayout extends Component {
       <div>
         <SideBar menus={
           [
-            { path: '/', title: 'Instruction' },
-            { path: '/local', title: 'Demo on the local net' },
-            { path: '/ropsten', title: 'Demo on Ropsten network' },
+            {
+              path: process.env.PUBLIC_URL + '/',
+              title: process.env.NODE_ENV === 'production'
+                ? 'Demo on Ropsten network'
+                : 'Demo on the local net',
+            },
+            { path: process.env.PUBLIC_URL + '/manual', title: 'Manual' },
           ]
         }/>
         <div id="wrapper">
-          <section className={classnames('wrapper', 'fullscreen', `style${this.props.styleCode}`)}>
+          <section className={classnames('wrapper', 'fullscreen',
+            `style${this.props.styleCode}`)}>
             <div className="inner">
               {this.props.children}
             </div>
