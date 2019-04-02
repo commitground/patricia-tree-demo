@@ -15,7 +15,7 @@ Patricia Tree Demo Application with ReactJS &amp; Drizzle
 ## Run it on your local environment
 
 ```
-git clone https://github.com/commitground/patricia-tree-demo
+git clone https://github.com/commitground/patricia-tree-demo.git
 cd patricia-tree-demo
 npm run install
 npm run chain # run this script on another shell window
